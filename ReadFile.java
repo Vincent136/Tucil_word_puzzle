@@ -10,7 +10,8 @@ public class ReadFile {
     {
         try {
             s = new Scanner(new File(FileName));
-            String[] RRows = s.nextLine().split(" ");
+            String RRows = s.nextLine();
+            RRows = RRows.replaceAll("\\s","");
             
             int Rows = 0;
             
@@ -30,7 +31,7 @@ public class ReadFile {
 
             s.close();
 
-            int Cols = RRows.length;
+            int Cols = RRows.length();
 
             int[] Result = new int[3];
 
@@ -84,7 +85,44 @@ public class ReadFile {
         }
     }
 
-    public static void BruteForceWordPuzzle(char[][]puzzle,String[]words)
+    public static void print2D(char mat[][])
+    {
+        for (int i = 0; i < mat.length; i++){
+ 
+            for (int j = 0; j < mat[i].length; j++){
+                System.out.print(mat[i][j] + " ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void PuzzleOutput(int[][]arr, char[][]puzzle)
+    {
+        for (int x=0; x < puzzle.length; x++) {
+            for (int y=0; y < puzzle[0].length; y++) {
+                if(arr[x][y] == 1)
+                {
+                    System.out.print(puzzle[x][y] + " ");
+                } else {
+                    System.out.print("- ");
+                }
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void TurnToZero(int[][]arr)
+    {
+        for (int row = 0; row < arr.length; row++)
+        {
+            for (int col = 0; col < arr[row].length; col++)
+            {
+                arr[row][col] = 0; 
+            }
+        }
+    }
+
+    public static void BruteForceWordPuzzle(char[][]puzzle,String[]words, int[][]Result)
     {
         int Rows = puzzle.length;
         int Cols = puzzle[0].length;
@@ -113,8 +151,22 @@ public class ReadFile {
                                 counter++;
                             }
                             if(counter == Pword) {
-                                System.out.print(words[i]);
-                                System.out.println(" Ketemu!");
+                                counter = 0;
+                                System.out.println(words[i]);
+
+                                int [][]arr = new int[Rows][Cols];
+                                
+                                TurnToZero(arr);
+
+                                m = j;
+                                n = k;
+                                while(counter < Pword) {
+                                    arr[m][n] = 1;
+                                    m--;
+                                    counter++;
+                                }
+
+                                PuzzleOutput(arr,puzzle);
                             }
                         }
 
@@ -131,8 +183,22 @@ public class ReadFile {
                                 counter++;
                             }
                             if(counter == Pword) {
-                                System.out.print(words[i]);
-                                System.out.println(" Ketemu!");
+                                counter = 0;
+                                System.out.println(words[i]);
+
+                                int [][]arr = new int[Rows][Cols];
+                                
+                                TurnToZero(arr);
+
+                                m = j;
+                                n = k;
+                                while(counter < Pword) {
+                                    arr[m][n] = 1;
+                                    n--;
+                                    counter++;
+                                }
+                                
+                                PuzzleOutput(arr,puzzle);
                             }
                         }
 
@@ -149,8 +215,22 @@ public class ReadFile {
                                 counter++;
                             }
                             if(counter == Pword) {
-                                System.out.print(words[i]);
-                                System.out.println(" Ketemu!");
+                                counter = 0;
+                                System.out.println(words[i]);
+
+                                int [][]arr = new int[Rows][Cols];
+                                
+                                TurnToZero(arr);
+
+                                m = j;
+                                n = k;
+                                while(counter < Pword) {
+                                    arr[m][n] = 1;
+                                    m++;
+                                    counter++;
+                                }
+                                
+                                PuzzleOutput(arr,puzzle);
                             }
                         }
 
@@ -167,8 +247,22 @@ public class ReadFile {
                                 counter++;
                             }
                             if(counter == Pword) {
-                                System.out.print(words[i]);
-                                System.out.println(" Ketemu!");
+                                counter = 0;
+                                System.out.println(words[i]);
+
+                                int [][]arr = new int[Rows][Cols];
+                                
+                                TurnToZero(arr);
+
+                                m = j;
+                                n = k;
+                                while(counter < Pword) {
+                                    arr[m][n] = 1;
+                                    n++;
+                                    counter++;
+                                }
+                                
+                                PuzzleOutput(arr,puzzle);
                             }
                         }
 
@@ -186,8 +280,23 @@ public class ReadFile {
                                 counter++;
                             }
                             if(counter == Pword) {
-                                System.out.print(words[i]);
-                                System.out.println(" Ketemu!");
+                                counter = 0;
+                                System.out.println(words[i]);
+
+                                int [][]arr = new int[Rows][Cols];
+                                
+                                TurnToZero(arr);
+
+                                m = j;
+                                n = k;
+                                while(counter < Pword) {
+                                    arr[m][n] = 1;
+                                    m--;
+                                    n--;
+                                    counter++;
+                                }
+                                
+                                PuzzleOutput(arr,puzzle);
                             }
                         }
 
@@ -205,8 +314,23 @@ public class ReadFile {
                                 counter++;
                             }
                             if(counter == Pword) {
-                                System.out.print(words[i]);
-                                System.out.println(" Ketemu!");
+                                counter = 0;
+                                System.out.println(words[i]);
+
+                                int [][]arr = new int[Rows][Cols];
+                                
+                                TurnToZero(arr);
+
+                                m = j;
+                                n = k;
+                                while(counter < Pword) {
+                                    arr[m][n] = 1;
+                                    m++;
+                                    n--;
+                                    counter++;
+                                }
+                                
+                                PuzzleOutput(arr,puzzle);
                             }
                         }
 
@@ -224,8 +348,23 @@ public class ReadFile {
                                 counter++;
                             }
                             if(counter == Pword) {
-                                System.out.print(words[i]);
-                                System.out.println(" Ketemu!");
+                                counter = 0;
+                                System.out.println(words[i]);
+
+                                int [][]arr = new int[Rows][Cols];
+                                
+                                TurnToZero(arr);
+
+                                m = j;
+                                n = k;
+                                while(counter < Pword) {
+                                    arr[m][n] = 1;
+                                    m++;
+                                    n++;
+                                    counter++;
+                                }
+                                
+                                PuzzleOutput(arr,puzzle);
                             }
                         }
 
@@ -243,8 +382,23 @@ public class ReadFile {
                                 counter++;
                             }
                             if(counter == Pword) {
-                                System.out.print(words[i]);
-                                System.out.println(" Ketemu!");
+                                counter = 0;
+                                System.out.println(words[i]);
+
+                                int [][]arr = new int[Rows][Cols];
+                                
+                                TurnToZero(arr);
+
+                                m = j;
+                                n = k;
+                                while(counter < Pword) {
+                                    arr[m][n] = 1;
+                                    m--;
+                                    n++;
+                                    counter++;
+                                }
+                                
+                                PuzzleOutput(arr,puzzle);
                             }
                         }
                     }
@@ -252,15 +406,21 @@ public class ReadFile {
             }
         }
     }
-
     public static void main(String[] args){
-        int[] RC = RowNColCount("test.txt");
+        System.out.print("Masukkan nama file: ");
+        String FileName = keyboard_scanner.next();
+
+        int[] RC = RowNColCount(FileName);
 
         char[][] puzzle = new char[RC[0]][RC[1]];
+        System.out.println(RC[1]);
+        System.out.println(RC[0]);
         String[] words = new String[RC[2]];
 
-        ReadPuzzle("test.txt", puzzle, words);
+        int[][] Result = new int[RC[2]][4];
 
-        BruteForceWordPuzzle(puzzle, words);
+        ReadPuzzle(FileName, puzzle, words);
+
+        BruteForceWordPuzzle(puzzle, words, Result);
     }
 }
