@@ -122,11 +122,12 @@ public class ReadFile {
         }
     }
 
-    public static void BruteForceWordPuzzle(char[][]puzzle,String[]words, int[][]Result)
+    public static int BruteForceWordPuzzle(char[][]puzzle,String[]words, int[][]Result)
     {
         int Rows = puzzle.length;
         int Cols = puzzle[0].length;
         int Pwords = words.length;
+        int TotalCompare = 0;
 
         for (int i=0; i < Pwords ; i++){
             int Pword = words[i].length();
@@ -138,6 +139,8 @@ public class ReadFile {
                         int n;
                         int counter;
 
+                        TotalCompare++;
+
                         // cek ke atas
                         if(!Found){
                             counter = 1;  
@@ -147,6 +150,8 @@ public class ReadFile {
                                 m--;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
+                                } else {
+                                    TotalCompare++;
                                 }
                                 counter++;
                             }
@@ -179,6 +184,8 @@ public class ReadFile {
                                 n--;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
+                                }else {
+                                    TotalCompare++;
                                 }
                                 counter++;
                             }
@@ -211,6 +218,8 @@ public class ReadFile {
                                 m++;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
+                                } else {
+                                    TotalCompare++;
                                 }
                                 counter++;
                             }
@@ -243,6 +252,8 @@ public class ReadFile {
                                 n++;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
+                                } else {
+                                    TotalCompare++;
                                 }
                                 counter++;
                             }
@@ -276,6 +287,8 @@ public class ReadFile {
                                 n--;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
+                                } else {
+                                    TotalCompare++;
                                 }
                                 counter++;
                             }
@@ -310,6 +323,8 @@ public class ReadFile {
                                 n--;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
+                                } else {
+                                    TotalCompare++;
                                 }
                                 counter++;
                             }
@@ -344,6 +359,8 @@ public class ReadFile {
                                 n++;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
+                                } else {
+                                    TotalCompare++;
                                 }
                                 counter++;
                             }
@@ -378,6 +395,8 @@ public class ReadFile {
                                 n++;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
+                                } else {
+                                    TotalCompare++;
                                 }
                                 counter++;
                             }
@@ -405,22 +424,28 @@ public class ReadFile {
                 }
             }
         }
+        return TotalCompare;
     }
     public static void main(String[] args){
         System.out.print("Masukkan nama file: ");
         String FileName = keyboard_scanner.next();
+        System.out.println();
 
         int[] RC = RowNColCount(FileName);
-
         char[][] puzzle = new char[RC[0]][RC[1]];
-        System.out.println(RC[1]);
-        System.out.println(RC[0]);
         String[] words = new String[RC[2]];
-
         int[][] Result = new int[RC[2]][4];
 
         ReadPuzzle(FileName, puzzle, words);
 
-        BruteForceWordPuzzle(puzzle, words, Result);
+        long StartTime = System.currentTimeMillis();
+        int TotalCompare = BruteForceWordPuzzle(puzzle, words, Result);
+        long StopTime = System.currentTimeMillis();
+
+        System.out.println("");
+
+        System.out.println("Execution time: " + (StopTime - StartTime) + " ms");
+
+        System.out.print("Total Comparison: " + TotalCompare);
     }
 }
