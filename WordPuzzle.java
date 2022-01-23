@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.Scanner;
 
-public class ReadFile {
+public class WordPuzzle {
     private static final Scanner keyboard_scanner = new Scanner(System.in);
 
     static Scanner s = null;
@@ -139,8 +139,6 @@ public class ReadFile {
                         int n;
                         int counter;
 
-                        TotalCompare++;
-
                         // cek ke atas
                         if(!Found){
                             counter = 1;  
@@ -150,9 +148,8 @@ public class ReadFile {
                                 m--;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
-                                } else {
-                                    TotalCompare++;
                                 }
+                                TotalCompare++;
                                 counter++;
                             }
                             if(counter == Pword) {
@@ -184,9 +181,8 @@ public class ReadFile {
                                 n--;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
-                                }else {
-                                    TotalCompare++;
                                 }
+                                TotalCompare++;
                                 counter++;
                             }
                             if(counter == Pword) {
@@ -218,9 +214,8 @@ public class ReadFile {
                                 m++;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
-                                } else {
-                                    TotalCompare++;
-                                }
+                                } 
+                                TotalCompare++;
                                 counter++;
                             }
                             if(counter == Pword) {
@@ -252,9 +247,8 @@ public class ReadFile {
                                 n++;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
-                                } else {
-                                    TotalCompare++;
                                 }
+                                TotalCompare++;
                                 counter++;
                             }
                             if(counter == Pword) {
@@ -287,9 +281,8 @@ public class ReadFile {
                                 n--;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
-                                } else {
-                                    TotalCompare++;
                                 }
+                                TotalCompare++;
                                 counter++;
                             }
                             if(counter == Pword) {
@@ -323,9 +316,8 @@ public class ReadFile {
                                 n--;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
-                                } else {
-                                    TotalCompare++;
-                                }
+                                } 
+                                TotalCompare++;
                                 counter++;
                             }
                             if(counter == Pword) {
@@ -359,9 +351,8 @@ public class ReadFile {
                                 n++;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
-                                } else {
-                                    TotalCompare++;
                                 }
+                                TotalCompare++;
                                 counter++;
                             }
                             if(counter == Pword) {
@@ -395,9 +386,8 @@ public class ReadFile {
                                 n++;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
                                     break;
-                                } else {
-                                    TotalCompare++;
                                 }
+                                TotalCompare++;
                                 counter++;
                             }
                             if(counter == Pword) {
@@ -421,6 +411,7 @@ public class ReadFile {
                             }
                         }
                     }
+                    TotalCompare++;
                 }
             }
         }
