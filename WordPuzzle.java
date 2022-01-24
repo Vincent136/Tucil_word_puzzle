@@ -109,6 +109,7 @@ public class WordPuzzle {
             }
             System.out.println("");
         }
+        System.out.println("");
     }
 
     public static void TurnToZero(int[][]arr)
