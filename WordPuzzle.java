@@ -147,6 +147,7 @@ public class WordPuzzle {
                             while(m != 0 && counter < Pword) {
                                 m--;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
+                                    TotalCompare++;
                                     break;
                                 }
                                 TotalCompare++;
@@ -180,6 +181,7 @@ public class WordPuzzle {
                             while(n != 0 && counter < Pword) {
                                 n--;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
+                                    TotalCompare++;
                                     break;
                                 }
                                 TotalCompare++;
@@ -213,6 +215,7 @@ public class WordPuzzle {
                             while(m != Rows-1 && counter < Pword) {
                                 m++;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
+                                    TotalCompare++;
                                     break;
                                 } 
                                 TotalCompare++;
@@ -246,6 +249,7 @@ public class WordPuzzle {
                             while(n != Cols-1 && counter < Pword) {
                                 n++;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
+                                    TotalCompare++;
                                     break;
                                 }
                                 TotalCompare++;
@@ -280,6 +284,7 @@ public class WordPuzzle {
                                 m--;
                                 n--;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
+                                    TotalCompare++;
                                     break;
                                 }
                                 TotalCompare++;
@@ -315,6 +320,7 @@ public class WordPuzzle {
                                 m++;
                                 n--;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
+                                    TotalCompare++;
                                     break;
                                 } 
                                 TotalCompare++;
@@ -350,6 +356,7 @@ public class WordPuzzle {
                                 m++;
                                 n++;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
+                                    TotalCompare++;
                                     break;
                                 }
                                 TotalCompare++;
@@ -385,6 +392,7 @@ public class WordPuzzle {
                                 m--;
                                 n++;
                                 if (words[i].charAt(counter) != puzzle[m][n]) {
+                                    TotalCompare++;
                                     break;
                                 }
                                 TotalCompare++;
