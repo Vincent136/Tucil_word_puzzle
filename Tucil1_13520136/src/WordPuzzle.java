@@ -9,7 +9,7 @@ public class WordPuzzle {
     public static int[] RowNColCount(String FileName)
     {
         try {
-            s = new Scanner(new File(FileName));
+            s = new Scanner(new File("../test/"+FileName));
             String RRows = s.nextLine();
             RRows = RRows.replaceAll("\\s","");
             
@@ -51,7 +51,7 @@ public class WordPuzzle {
     public static void ReadPuzzle(String FileName,char[][]puzzle, String[] words)
     {
         try{
-            s = new Scanner(new File(FileName));
+            s = new Scanner(new File("../test/"+FileName));
 
             int Rows = puzzle.length;
             int Cols = puzzle[0].length;
